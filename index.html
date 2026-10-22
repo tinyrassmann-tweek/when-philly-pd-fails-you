@@ -6,31 +6,33 @@
 <title>When Philly PD Fails You — Free Guide</title>
 <meta name="description" content="Free guide for Philadelphia civilians when police don't respond. Phone numbers, statutes, private criminal complaints, CPOC, State Police, noise ordinances, parental rights, and cease-and-desists.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0f2744;
-    --navy-mid: #1a3a5c;
-    --gold: #c9a227;
-    --gold-light: #e8d48b;
-    --cream: #f7f4ee;
+    --navy: #0b1f3a;
+    --navy-soft: #16325c;
+    --gold: #d4af37;
+    --gold-soft: #e8d48b;
+    --cream: #f8f6f1;
     --white: #ffffff;
-    --text: #1e293b;
-    --muted: #5a6570;
-    --red: #9b2335;
+    --text: #1a2332;
+    --muted: #5c6770;
+    --red: #8b1e3f;
+    --shadow: 0 8px 32px rgba(11,31,58,0.08);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(180deg, #f7f4ee 0%, #eef2f7 100%);
+    background: var(--cream);
     color: var(--text);
-    line-height: 1.65;
+    line-height: 1.7;
   }
   .hero {
-    background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 55%, #2a4a72 100%);
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-soft) 60%, #1e3a6e 100%);
     color: var(--white);
     text-align: center;
-    padding: 72px 24px 64px;
+    padding: 96px 24px 80px;
     position: relative;
     overflow: hidden;
   }
@@ -38,125 +40,145 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 20% 80%, rgba(201,162,39,0.12) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 40%);
-    pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 50% at 15% 85%, rgba(212,175,55,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 85% 15%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    animation: drift 18s ease-in-out infinite alternate;
   }
-  .hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
+  @keyframes drift {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-20px, 15px) scale(1.05); }
+  }
+  .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
   .badge {
     display: inline-block;
-    background: rgba(201,162,39,0.15);
-    color: var(--gold-light);
-    font-size: 0.75rem;
+    background: rgba(212,175,55,0.12);
+    color: var(--gold-soft);
+    font-size: 0.72rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1px solid rgba(201,162,39,0.35);
-    margin-bottom: 20px;
+    padding: 7px 16px;
+    border-radius: 24px;
+    border: 1px solid rgba(212,175,55,0.35);
+    margin-bottom: 24px;
   }
   h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
   }
   .tagline {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     color: var(--gold);
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
   .subtag {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.75);
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.72);
     font-style: italic;
-    margin-bottom: 28px;
+    margin-bottom: 36px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
   }
+  .btn-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: var(--gold);
     color: var(--navy);
     font-weight: 700;
-    font-size: 1.05rem;
-    padding: 14px 32px;
-    border-radius: 8px;
+    font-size: 1rem;
+    padding: 15px 28px;
+    border-radius: 10px;
     text-decoration: none;
-    transition: transform 0.15s, background 0.15s;
-    box-shadow: 0 4px 16px rgba(201,162,39,0.3);
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 20px rgba(212,175,55,0.28);
   }
-  .btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn:hover { background: var(--gold-soft); transform: translateY(-2px); }
   .btn-outline {
-    display: inline-block;
-    margin-left: 12px;
     background: transparent;
     color: var(--white);
-    border: 2px solid rgba(255,255,255,0.4);
-    font-weight: 600;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    box-shadow: none;
   }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .container { max-width: 780px; margin: 0 auto; padding: 56px 20px 72px; }
   .callout {
     background: var(--red);
     color: var(--white);
-    padding: 18px 22px;
-    border-radius: 10px;
+    padding: 20px 26px;
+    border-radius: 14px;
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     text-align: center;
-    margin-bottom: 32px;
-    line-height: 1.5;
+    margin-bottom: 40px;
+    line-height: 1.55;
+    box-shadow: 0 8px 24px rgba(139,30,63,0.18);
   }
   details {
     background: var(--white);
-    border-radius: 12px;
-    margin-bottom: 12px;
-    box-shadow: 0 1px 4px rgba(15,39,68,0.06);
-    border: 1px solid #e8e4dc;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+    border: 1px solid #ece8e0;
     overflow: hidden;
+    transition: box-shadow 0.2s;
   }
+  details:hover { box-shadow: 0 10px 36px rgba(11,31,58,0.1); }
   summary {
-    padding: 18px 22px;
+    padding: 20px 24px;
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.06rem;
     cursor: pointer;
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: var(--navy);
+    transition: background 0.15s;
   }
+  summary:hover { background: #faf9f6; }
   summary::-webkit-details-marker { display: none; }
-  summary::after { content: '+'; font-size: 1.4rem; color: var(--gold); font-weight: 400; }
-  details[open] summary::after { content: '–'; }
-  details p, details ul { padding: 0 22px 18px; color: var(--text); }
-  details ul { margin-left: 18px; }
-  details li { margin-bottom: 6px; }
+  summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 400;
+    transition: transform 0.2s;
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p, details ul { padding: 4px 24px 20px; color: var(--text); }
+  details ul { margin-left: 20px; }
+  details li { margin-bottom: 7px; }
   .founder {
     background: var(--white);
-    border-left: 4px solid var(--gold);
-    padding: 24px 28px;
-    border-radius: 0 12px 12px 0;
-    margin-top: 36px;
-    box-shadow: 0 1px 4px rgba(15,39,68,0.06);
+    border-left: 5px solid var(--gold);
+    padding: 28px 32px;
+    border-radius: 0 16px 16px 0;
+    margin-top: 48px;
+    box-shadow: var(--shadow);
   }
-  .founder p { margin-bottom: 10px; }
-  .signature { font-weight: 700; color: var(--navy); margin-top: 8px; }
+  .founder p { margin-bottom: 12px; font-size: 1.02rem; }
+  .signature { font-weight: 700; color: var(--navy); margin-top: 10px; font-size: 1.05rem; }
   .footer {
     text-align: center;
-    padding: 40px 20px;
+    padding: 48px 20px;
     color: var(--muted);
-    font-size: 0.9rem;
-    border-top: 1px solid #e0ddd6;
+    font-size: 0.92rem;
+    border-top: 1px solid #e6e2da;
+    background: #f3f0ea;
   }
   .footer strong { color: var(--navy); }
-  @media (max-width: 600px) {
-    .btn-outline { margin-left: 0; margin-top: 12px; display: block; }
+  @media (max-width: 640px) {
+    .hero { padding: 72px 20px 60px; }
+    .btn-group { flex-direction: column; align-items: center; }
   }
 </style>
 </head>
@@ -167,8 +189,10 @@
       <h1>When Philly PD Fails You</h1>
       <div class="tagline">They didn't come. Here's who will.</div>
       <div class="subtag">The suffering was real. The outcome is useful. Given away free.</div>
-      <a href="When-Philly-PD-Fails-You-Guide.pdf" class="btn" download>Download Free Guide (PDF)</a>
-      <a href="#sections" class="btn-outline">Read Online</a>
+      <div class="btn-group">
+        <a href="When-Philly-PD-Fails-You-Guide.pdf" class="btn" download>Download Free Guide (PDF)</a>
+        <a href="#sections" class="btn btn-outline">Read Online</a>
+      </div>
     </div>
   </header>
 
