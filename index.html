@@ -28,31 +28,22 @@
     color: var(--text);
     line-height: 1.7;
   }
-  .hero {
-    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-soft) 60%, #1e3a6e 100%);
+  .hero-visual {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
+    background: var(--navy);
+  }
+  .hero-content {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-soft) 100%);
     color: var(--white);
     text-align: center;
-    padding: 96px 24px 80px;
-    position: relative;
-    overflow: hidden;
+    padding: 48px 24px 56px;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 15% 85%, rgba(212,175,55,0.15) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 40% at 85% 15%, rgba(255,255,255,0.05) 0%, transparent 50%);
-    animation: drift 18s ease-in-out infinite alternate;
-  }
-  @keyframes drift {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(-20px, 15px) scale(1.05); }
-  }
-  .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
   .badge {
     display: inline-block;
-    background: rgba(212,175,55,0.12);
+    background: rgba(212,175,55,0.15);
     color: var(--gold-soft);
     font-size: 0.72rem;
     font-weight: 600;
@@ -61,27 +52,20 @@
     padding: 7px 16px;
     border-radius: 24px;
     border: 1px solid rgba(212,175,55,0.35);
-    margin-bottom: 24px;
-  }
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.6rem, 6vw, 4rem);
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: 14px;
-    letter-spacing: -0.01em;
+    margin-bottom: 16px;
   }
   .tagline {
-    font-size: 1.4rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
     color: var(--gold);
     font-weight: 600;
     margin-bottom: 8px;
   }
   .subtag {
     font-size: 1.05rem;
-    color: rgba(255,255,255,0.72);
+    color: rgba(255,255,255,0.75);
     font-style: italic;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;
@@ -109,7 +93,7 @@
     box-shadow: none;
   }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-  .container { max-width: 780px; margin: 0 auto; padding: 56px 20px 72px; }
+  .container { max-width: 780px; margin: 0 auto; padding: 48px 20px 72px; }
   .callout {
     background: var(--red);
     color: var(--white);
@@ -177,24 +161,23 @@
   }
   .footer strong { color: var(--navy); }
   @media (max-width: 640px) {
-    .hero { padding: 72px 20px 60px; }
+    .hero-visual { max-height: 280px; }
     .btn-group { flex-direction: column; align-items: center; }
   }
 </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="badge">Free Guide · Philadelphia</div>
-      <h1>When Philly PD Fails You</h1>
-      <div class="tagline">They didn't come. Here's who will.</div>
-      <div class="subtag">The suffering was real. The outcome is useful. Given away free.</div>
-      <div class="btn-group">
-        <a href="When-Philly-PD-Fails-You-Guide.pdf" class="btn" download>Download Free Guide (PDF)</a>
-        <a href="#sections" class="btn btn-outline">Read Online</a>
-      </div>
+  <img src="hero.jpg" alt="They didn't come. Here's who will." class="hero-visual">
+
+  <div class="hero-content">
+    <div class="badge">Free Guide · Philadelphia</div>
+    <div class="tagline">They didn't come. Here's who will.</div>
+    <div class="subtag">The suffering was real. The outcome is useful. Given away free.</div>
+    <div class="btn-group">
+      <a href="When-Philly-PD-Fails-You-Guide.pdf" class="btn" download>Download Free Guide (PDF)</a>
+      <a href="#sections" class="btn btn-outline">Read Online</a>
     </div>
-  </header>
+  </div>
 
   <main class="container" id="sections">
     <div class="callout">Standing up for your rights is not snitching. It is citizenship. You are a United States citizen. Human decency is owed to you by law, not by permission.</div>
