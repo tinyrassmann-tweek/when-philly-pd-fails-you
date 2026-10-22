@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Philly PD Fails You — Free Guide</title>
+<meta name="description" content="Free guide for Philadelphia civilians when police don't respond. Phone numbers, statutes, private criminal complaints, CPOC, State Police, noise ordinances, parental rights, and cease-and-desists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2744;
+    --navy-mid: #1a3a5c;
+    --gold: #c9a227;
+    --gold-light: #e8d48b;
+    --cream: #f7f4ee;
+    --white: #ffffff;
+    --text: #1e293b;
+    --muted: #5a6570;
+    --red: #9b2335;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(180deg, #f7f4ee 0%, #eef2f7 100%);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .hero {
+    background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 55%, #2a4a72 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 72px 24px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 80%, rgba(201,162,39,0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
+  .badge {
+    display: inline-block;
+    background: rgba(201,162,39,0.15);
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(201,162,39,0.35);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .tagline {
+    font-size: 1.35rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .subtag {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+    box-shadow: 0 4px 16px rgba(201,162,39,0.3);
+  }
+  .btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    display: inline-block;
+    margin-left: 12px;
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.4);
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .callout {
+    background: var(--red);
+    color: var(--white);
+    padding: 18px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  details {
+    background: var(--white);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 4px rgba(15,39,68,0.06);
+    border: 1px solid #e8e4dc;
+    overflow: hidden;
+  }
+  summary {
+    padding: 18px 22px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--navy);
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 1.4rem; color: var(--gold); font-weight: 400; }
+  details[open] summary::after { content: '–'; }
+  details p, details ul { padding: 0 22px 18px; color: var(--text); }
+  details ul { margin-left: 18px; }
+  details li { margin-bottom: 6px; }
+  .founder {
+    background: var(--white);
+    border-left: 4px solid var(--gold);
+    padding: 24px 28px;
+    border-radius: 0 12px 12px 0;
+    margin-top: 36px;
+    box-shadow: 0 1px 4px rgba(15,39,68,0.06);
+  }
+  .founder p { margin-bottom: 10px; }
+  .signature { font-weight: 700; color: var(--navy); margin-top: 8px; }
+  .footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid #e0ddd6;
+  }
+  .footer strong { color: var(--navy); }
+  @media (max-width: 600px) {
+    .btn-outline { margin-left: 0; margin-top: 12px; display: block; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="badge">Free Guide · Philadelphia</div>
+      <h1>When Philly PD Fails You</h1>
+      <div class="tagline">They didn't come. Here's who will.</div>
+      <div class="subtag">The suffering was real. The outcome is useful. Given away free.</div>
+      <a href="When-Philly-PD-Fails-You-Guide.pdf" class="btn" download>Download Free Guide (PDF)</a>
+      <a href="#sections" class="btn-outline">Read Online</a>
+    </div>
+  </header>
+
+  <main class="container" id="sections">
+    <div class="callout">Standing up for your rights is not snitching. It is citizenship. You are a United States citizen. Human decency is owed to you by law, not by permission.</div>
+
+    <details open>
+      <summary>1. Skip Your District — Call State Police</summary>
+      <p>Pennsylvania State Police, Troop K, Philadelphia barracks. <strong>2201 Belmont Avenue</strong>. Phone: <strong>215-452-5216</strong>.</p>
+      <p>They cover Philadelphia County independently of the Philadelphia Police Department. You do not call your district back. You call them. They handle everything from traffic disputes to noise ordinances to situations your local precinct sat on.</p>
+    </details>
+
+    <details>
+      <summary>2. File Where It Lands — CPOC</summary>
+      <p>Citizens Police Oversight Commission. This is the city's civilian oversight body, not Internal Affairs.</p>
+      <ul>
+        <li>Phone: <strong>215-685-0891</strong></li>
+        <li>Email: CPOC@phila.gov</li>
+        <li>Address: 2401 Walnut Street, Suite 602</li>
+      </ul>
+      <p>They take your complaint, review it, and forward it to PPD's Internal Affairs Division. They can also sit in on interviews with you and monitor the investigation.</p>
+    </details>
+
+    <details>
+      <summary>3. Private Criminal Complaint (No Police Report Needed)</summary>
+      <p>Under Pennsylvania Rule of Criminal Procedure 506, any civilian can submit a criminal case directly to the court. You do not need a police report. You do not need police approval.</p>
+      <ul>
+        <li><strong>1425 Arch Street, 4th Floor</strong></li>
+        <li>Phone: <strong>215-686-9848</strong></li>
+      </ul>
+      <p>Bring the accused's full name and address, any district control number you already have, and your documentation. Harassment, terroristic threats, criminal mischief, and assault between neighbors or family members all qualify.</p>
+    </details>
+
+    <details>
+      <summary>4. What the Law Protects</summary>
+      <ul>
+        <li><strong>Harassment — Title 18, Section 2709.</strong> A course of conduct with no legitimate purpose. Third-degree misdemeanor for communication-based offenses.</li>
+        <li><strong>Cyber harassment of a child — Title 18, Section 2709(a.1).</strong> Electronic messages targeting a minor's appearance, health, or safety.</li>
+        <li><strong>Noise ordinance.</strong> Quiet hours 9:00 PM to 8:00 AM. Sound audible past 100 feet is a violation. First fine: $100–$300. File through 311 or the Philly 311 app.</li>
+        <li><strong>Parental rights — Title 18, Section 509.</strong> A parent may use reasonable force to safeguard or promote a child's welfare, including preventing or punishing misconduct, as long as it does not create substantial risk of death, serious injury, disfigurement, extreme pain, or mental distress.</li>
+        <li><strong>Parental rights — Title 23, Section 6304.</strong> Reasonable force for supervision, control, and safety is explicitly excluded from the definition of child abuse. You are not a criminal for holding a boundary.</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>5. Cease and Desist — Civilian Version</summary>
+      <p>You do not need a lawyer to send one. Write it: your name, their name, the specific conduct, the demand to stop immediately, and the statement that continued conduct becomes evidence of intent. Send it certified mail with return receipt. That green card is your proof they were notified. Keep a copy of everything.</p>
+    </details>
+
+    <details>
+      <summary>6. Free Legal Backup</summary>
+      <ul>
+        <li><strong>Community Legal Services</strong> — 215-981-3700. New clients by phone only. Expanded intake four days a week. Walk-ins Tuesdays and Thursdays 9 AM–12 PM at 1424 Chestnut Street. Family hotline for DHS cases: 215-981-3765.</li>
+        <li><strong>Philly Tenant Hotline</strong> — 267-443-2500</li>
+        <li>Income limit: 125% of federal poverty (~$34,000 for a family of three in 2026).</li>
+        <li>Protection from Abuse (PFA) orders can be filed yourself at the courthouse.</li>
+      </ul>
+    </details>
+
+    <div class="founder">
+      <p>I spent fifty-nine nights learning this the hard way so you don't have to. Fifteen calls in twenty-four hours. Three visits. A sergeant who wouldn't come. A neighbor who looked me in the face and lied. I was exhausted. I was a mother alone with a four-year-old. And I nearly broke before I found the back door.</p>
+      <p>This guide is that back door — free, because when your child's safety is on the line, twenty dollars is the difference between knowing and not knowing. You are not a byproduct of someone else's failure to act. You have rights. Use them.</p>
+      <p class="signature">— Tiny</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <strong>Think Tank Digital</strong> · Think Tank Solutions AI<br>
+    Free guide. Philadelphia. When police don't respond, this is your back door.<br>
+    whenphillypdfails@outlook.com
+  </footer>
+</body>
+</html>
